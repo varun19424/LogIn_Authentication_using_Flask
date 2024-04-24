@@ -1,3 +1,7 @@
 flask
 flask_sqlalchemy
+<<<<<<< HEAD
 bcrypt
+=======
+bcrypt
+>>>>>>> e9621d472ed51013ca1ef0aaabbe84f913f2c912
