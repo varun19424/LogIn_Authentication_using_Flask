@@ -25,10 +25,6 @@ with app.app_context():
     db.create_all()
 
 
-@app.route('/')
-def index():
-    return render_template('index.html')
-
 @app.route('/register',methods=['GET','POST'])
 def register():
     if request.method == 'POST':
@@ -40,13 +36,13 @@ def register():
         new_user = User(name=name,email=email,password=password)
         db.session.add(new_user)
         db.session.commit()
-        return redirect('/login')
+        return redirect('/')
 
 
 
     return render_template('register.html')
 
-@app.route('/login',methods=['GET','POST'])
+@app.route('/',methods=['GET','POST'])
 def login():
     if request.method == 'POST':
         email = request.form['email']
